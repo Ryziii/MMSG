@@ -17,7 +17,7 @@
                     <td class="content"> 
                         <div class="posting">                           
                             {$msg.body}                                                                   <div class="commands">
-        <a href="/home/rmsg/recipemsg/msgid/{$msg.id}/">回复</a>
+        <a href="__ROOT__/home/rmsg/recipemsg/msgid/{$msg.id}/">回复</a>
     </div>                      </div>
                         
                     </td>
@@ -46,8 +46,8 @@
                             
             <div class="commands">
                 <if condition="$vo.username eq session('logineduser')">
-                <a href="/home/rmsg/editrmsg/rmsgid/{$vo.id}">编辑</a> | 
-                <a href="/home/rmsg/deletermsg/rmsgid/{$vo.id}">删除</a>
+                <a href="__ROOT__/home/rmsg/editrmsg/rmsgid/{$vo.id}">编辑</a> | 
+                <a href="__ROOT__/home/rmsg/deletermsg/rmsgid/{$vo.id}">删除</a>
                 </if>
             </div>      </td>
     </tr>

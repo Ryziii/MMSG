@@ -11,7 +11,7 @@ class RmsgController extends Controller{
 			$userid=$userTable->getUidByUname(session('logineduser'));
 			$r= $rmsgsTable->recipeMsg($msgid,$userid,$content);
 			if(false!==$r){
-				$this->success('添加回复成功！','/home/msg/viewmsg/msgid/'.$msgid);
+				$this->success('添加回复成功！',__ROOT__.'/home/msg/viewmsg/msgid/'.$msgid);
 			}else{
 				$this->error('添加回复失败！');
 			}
@@ -23,7 +23,7 @@ class RmsgController extends Controller{
 				$this->assign('view_title','发表留言');
 				$this->display();
 			}else{
-				$this->error('请先登录','/home/user/login/');
+				$this->error('请先登录',__ROOT__."/home/user/login/");
 			}
 		}
 	}
@@ -43,7 +43,7 @@ class RmsgController extends Controller{
 			$data['msgid']=$msgid;
 			$r= $rmsgsTable->editRmsg('id='.$rmsgid,$data);
 			if(false!==$r){
-				$this->success('修改回复成功！','/home/msg/viewmsg/'.$msgid);
+				$this->success('修改回复成功！',__ROOT__.'/home/msg/viewmsg/'.$msgid);
 			}else{
 				$this->error('修改回复失败！');
 			}
@@ -56,7 +56,7 @@ class RmsgController extends Controller{
 				$this->assign('view_title','发表留言');
 				$this->display();
 			}else{
-				$this->error('请先登录','/home/user/login/');
+				$this->error('请先登录',__ROOT__.'/home/user/login/');
 			}
 		}
 
@@ -67,7 +67,7 @@ class RmsgController extends Controller{
 		$msgid=$rmsgsTable->getMsgidByRmsgid($rmsgid);		
 		$r=$rmsgsTable->deleteRmsg('id='.$rmsgid);
 		if($r!==false){
-			$this->success('删除回复成功','/home/msg/viewmsg/'.$msgid);
+			$this->success('删除回复成功',__ROOT__.'/home/msg/viewmsg/'.$msgid);
 		}else {
 			$this->error('删除回复失败');
 		}

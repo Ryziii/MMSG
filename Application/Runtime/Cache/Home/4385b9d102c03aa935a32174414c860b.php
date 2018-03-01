@@ -14,7 +14,7 @@
 				<div class="logininfo">
 					<?php if(isset($_SESSION['logineduser'])): ?>欢迎您，<?php echo (session('logineduser')); ?>！ | <a href="/home/user/logout">注销</a>
 					<?php else: ?>
-						您还没有登录(<a href="/home/user/login/">登录</a>)&nbsp;
+						您还没有登录(<a href="/1home/user/login/">登录</a>)&nbsp;
 						还没有用户名(<a href="/home/user/register/">注册</a>)<?php endif; ?>
 				</div>
 			</div>

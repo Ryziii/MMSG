@@ -12,7 +12,7 @@ class MsgController extends Controller{
 			$data['userid']=$userTable->getUidByUname(session('logineduser'));
 			$r= $msgsTable->addMsg($data['title'],$data['body'],$data['userid']);
 			if(false!==$r){
-				$this->success('添加留言成功！','/home/msg/index');
+				$this->success('添加留言成功！',__ROOT__.'/home/msg/index');
 			}else{
 				$this->error('添加留言失败！');
 			}
@@ -36,7 +36,7 @@ class MsgController extends Controller{
 			$msgid=I('get.msgid');
 			$r= $msgsTable->updateMsg('id='.$msgid,$data);
 			if(false!==$r){
-				$this->success('修改留言成功！','/home/msg/index');
+				$this->success('修改留言成功！',__ROOT__.'/home/msg/index');
 			}else{
 				$this->error('修改留言失败！');
 			}
@@ -61,7 +61,7 @@ class MsgController extends Controller{
 		}
 		$r=$msgsTable->deleteMsg('id='.$id);
 		if($r!==false){
-			$this->success('留言删除成功！','home/msg/idnex');
+			$this->success('留言删除成功！',__ROOT__.'/home/msg/idnex');
 		}else{
 			$this->error('留言删除失败！');
 		}

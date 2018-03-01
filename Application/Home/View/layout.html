@@ -13,10 +13,10 @@
 			<div class="headermenu">
 				<div class="logininfo">
 					<present name="Think.session.logineduser">
-						欢迎您，{$Think.session.logineduser}！ | <a href="/home/user/logout">注销</a>
+						欢迎您，{$Think.session.logineduser}！ | <a href="__ROOT__/home/user/logout">注销</a>
 					<else />
-						您还没有登录(<a href="/home/user/login/">登录</a>)&nbsp;
-						还没有用户名(<a href="/home/user/register/">注册</a>)
+						您还没有登录(<a href="__ROOT__/home/user/login/">登录</a>)&nbsp;
+						还没有用户名(<a href="__ROOT__/home/user/register/">注册</a>)
 					</present>
 				</div>
 			</div>
@@ -26,7 +26,7 @@
 		<div class="navbar clearfix">
 			<div class="breadcrumb">
 				<ul>
-					<li class="first"><a href="/">多用户留言系统</a></li>
+					<li class="first"><a href="__ROOT__/">多用户留言系统</a></li>
 					<li><span class="arrow sep">&#x25BA;</span>{$view_title}</li>
 				</ul>
 			</div>
@@ -34,20 +34,11 @@
 
 		<!-- 显示留言板主题 -->
 		<!-- start PF CONTENT -->
-		<div id="content"><!-- 
-			<div id="intro" class="generalbox box">
-				<font size="+0" face="courier new">
-					欢迎大家来到我的留言板。<br/>
-					您有什么问题或想法，请书写下您的笔墨。<br/>
-					如果您有其他的想法......<br/>
-					您可以在这里和大家一起交流和讨论。<br/>
-					如果您还没有用户名，请<a href=""></a>
-				</font>
-			</div> -->
+		<div id="content">
 			{__CONTENT__}
 		</div>
 		<div id="footer">
-			&copy;2018 <a href="http://www.coeji.xyz">首页</a>
+			&copy;2018 <a href="http://www.coeji.xyz/MMSG/">首页</a>
 		</div>
 	</div>
 </body>

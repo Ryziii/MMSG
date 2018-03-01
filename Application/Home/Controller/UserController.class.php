@@ -18,7 +18,7 @@ class UserController extends Controller{
 				}
 				$r=$userTable->doUserRegister($userName,$userPswd,$userImage);
 				if($r>0){
-					$this->success('用户注册成功', '/home/user/login');
+					$this->success('用户注册成功', __ROOT__.'/home/user/login');
 				}elseif($r==-3){
 					$this->error('用户已存在');
 				}
@@ -37,7 +37,7 @@ class UserController extends Controller{
 			$userPswd=I('post.password');
 			if($userTable->isValidUser($userName,$userPswd)){
 				session('logineduser',$userName);
-				$this->success('登录成功','/home/msg/index');
+				$this->success('登录成功',__ROOT__.'/home/msg/index');
 			}else{
 				$this->error('用户名或者密码错误,请重新输入');
 			}
@@ -51,12 +51,7 @@ class UserController extends Controller{
 		$this->redirect('/home/msg/index');
 	}
 	public function changepswd(){
-		$userTable=D('users');
-		$userName='anfio2';
-		$oldPswd='222';
-		$newPswd='111';
-		$r=$userTable->doChangePswd($userName,$oldPswd,$newPswd);
-		dump($r);
+		$this->error('改功能暂未开发....');
 	}
 
 	/**
